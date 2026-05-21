@@ -28,6 +28,16 @@ k = 1.2
 print(type(k))
 
 # this is how to write the complex number
-
 g = 5 + 7j
+
+# to convert from type to type 
+w = str(k)
+print(w)
+print(type(w))
+
+# to convert to complex number
+ff = complex(a,c)
+# complex number = real + imag j
+print(ff.real)
+print(ff.imag)
 
