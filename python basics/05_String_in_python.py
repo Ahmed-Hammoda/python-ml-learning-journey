@@ -81,5 +81,56 @@ print(l)
 m = "the value of pi is {}".format(np.pi) # replace the {} with what is the format
 print(m)
 print("{0} and {1}".format('red', 'blue'))
+print("{first} and {last}".format(first = 'red',last = 'blue'))# you can replace what between the {} with the var in the format
+#we can also use s for string and d for numbers
+print('===' + '{:^30}'.format('Hello') + '===') # to center the word "Hello" is a string with size=30 the rest of the size is spaces
+print('{0:10} ===> {1:10d}'.format('name', 564849)) #{0:10} formats the first value as text with width 10
+                                                    # {1:10d} formats the second value as an integer with width 10
+#-----------------------------------------------------------------------------------------------------
+import re  # Import the regular expressions module
 
+# Compile a regex pattern to match simple email addresses:
+# \w+      -> one or more word characters (letters, digits, underscore)
+# @        -> the '@' symbol
+# \w+      -> one or more word characters (domain name)
+# \.       -> a literal dot
+# [a-z]{3} -> exactly 3 lowercase letters (top-level domain)
+email = re.compile('\w+@\w+\.[a-z]{3}')
 
+# Sample text containing email addresses
+text = "To email guido, try guido@python.org or guido@google.com"
+
+# Find all occurrences of the pattern in the text and print them
+print(email.findall(text))  # Output: ['guido@python.org', 'guido@goo']
+###########################################################
+# EXAMPLE 2 about the re (regular expressions) library :
+########################################################### 
+# Compile a regex pattern to match emails with **groups** for username, domain, and TLD
+# r''     -> raw string, so backslashes are treated literally
+# ([\w.]+) -> group 1: one or more word characters or dots (the username)
+# @        -> literal '@' symbol
+# (\w+)    -> group 2: one or more word characters (domain name)
+# \.       -> literal dot
+# ([a-z]{3}) -> group 3: exactly 3 lowercase letters (top-level domain)
+email2 = re.compile(r'([\w.]+)@(\w+)\.([a-z]{3})')
+
+# Find all matches and return them as a list of tuples (username, domain, TLD)
+print(email2.findall(text))
+# Output: [('guido', 'python', 'org'), ('guido', 'google', 'com')]
+
+###########################################################
+# EXAMPLE 3 about the re (regular expressions) library :
+########################################################### 
+
+# Compile a regex pattern with **named groups** for better readability
+# (?P<user>...)   -> named group 'user' for the username
+# (?P<domain>...) -> named group 'domain' for the domain
+# (?P<suffix>...) -> named group 'suffix' for the TLD
+email3 = re.compile(r'(?P<user>[\w.]+)@(?P<domain>\w+)\.(?P<suffix>[a-z]{3})')
+
+# Match the regex against a single email string
+match = email3.match('guido@python.org')
+
+# Print the matched groups as a dictionary: keys are the group names
+print(match.groupdict())  
+# Output: {'user': 'guido', 'domain': 'python', 'suffix': 'org'}
