@@ -53,6 +53,9 @@ print(sorted(c)) #sort the list element from the smaller to the biger even if it
 # this is the same with the letters 
 c.sort()
 print(c)
+o = [1,2,3,4,5,6,7,8,9,10]
+p = sorted(o , reverse=True) # to reverse the list
+print(p)
 
 
 
@@ -61,6 +64,6 @@ print(c)
 
 
 
-
+ 
 
 
