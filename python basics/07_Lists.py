@@ -56,6 +56,13 @@ print(c)
 o = [1,2,3,4,5,6,7,8,9,10]
 p = sorted(o , reverse=True) # to reverse the list
 print(p)
+q = 'I love python because it is an easy programming software'
+r = q.split()
+print(r) #the split will split in each sapce by defult and put each one as an element in the list
+q = 'I,love,python,because,it,is,an,easy,programming,software'
+r = q.split(sep= ',' , maxsplit=4) # i can control for what the split happend and how many times
+print(r)
+print(10 in o) # check if the 10 in the o list or not (true or false)
 
 
 
