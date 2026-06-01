@@ -63,6 +63,55 @@ q = 'I,love,python,because,it,is,an,easy,programming,software'
 r = q.split(sep= ',' , maxsplit=4) # i can control for what the split happend and how many times
 print(r)
 print(10 in o) # check if the 10 in the o list or not (true or false)
+o.extend(a)
+print(o) # add the list a to o and update o
+s = c + a
+print(s) # here i put list c and a in a new list but in the extend we change one of the lists
+a.append(35) # add a new value to the list (in the last index)
+print(a)
+a.insert(3, 'aaa') # add the string aaa in the index 3 (the fourth elemen) in the list a
+print(a)
+u = [1,56,2,64,2,4,49,4,2,5]
+print(u.count(2)) # how many times the element 2 exists in the list
+print(u.index(2)) # where the first 2 appear in the list (give me the index)
+u.reverse() #reverse the list order
+print(u)
+print(u.pop()) #remove the last element in the list
+print(u.pop(3)) #remove the element with the index 3 in the list
+t = list(range(20)) # to do a list with elements from 0 to 19
+print(t)
+t = list(range(3,20)) #from 3 to 19
+print(t)
+t = list(range(2,20,2)) # from 2 to 19 with a step = 2()
+print(t)
+y = [x**3 for x in range(12)] # form 0^3 to 11^3
+print(y)
+y = list(map(lambda x : x**5 , range(10))) # it works like the [x**3 for x in range(12)] concept
+print(y)
+listofjobs = [(names,jobs) for names in ['ahmed','mohamed','ali'] for jobs in ['engineer' , 'lawyer' , 'doctor']]
+print(listofjobs) # this way is important in machine learning
+combination = [(x,y,z) for x in range(10) for y in range(8) for z in range(6)] # do all the combinations for these numbers
+print(combination)
+x = iter([1,5,4,52,41,2,588,1,11,58])
+print(next(x)) # always go to the next element until reatch the last one
+print(next(x))
+print(next(x))
+print(next(x))
+# i can use the range in the iter function
+w = [2,88,5,5,6,6,165,4,81,9,9,7,4,6]
+z = w # the w list will be saved in the z var
+zz = w.copy()
+w[5] = 100
+print(z) # if you edit the w the z we also change
+print(zz) # will not change becuse it takes only the old copy (no updates if the  w changed in the next lines)
+names = ['a','b','c','d','e']
+for c , value in enumerate(names , 1): #will give each va
+    print(c , value)
+
+
+
+
+
 
 
 
