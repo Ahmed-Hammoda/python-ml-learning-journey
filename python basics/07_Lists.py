@@ -107,7 +107,78 @@ print(zz) # will not change becuse it takes only the old copy (no updates if the
 names = ['a','b','c','d','e']
 for c , value in enumerate(names , 1): #will give each va
     print(c , value)
+countries = ['egypt','libia','jordan']
+names = ['ahmed','mona','youssef']
+for a,b in zip(names,countries):
+    print(a + ' is living in '+b)
+##########################################################################
+# Import helper functions from the operator module.
+#
+# itemgetter(index)
+#   - Returns a function that extracts one or more items from an object.
+#   - Commonly used as a sorting key.
+#
+# methodcaller(method_name, *args)
+#   - Returns a function that calls the specified method on an object.
+#   - Useful when sorting based on the result of a method call.
+##########################################################################
+from operator import itemgetter
+from operator import methodcaller
 
+##########################################################################
+# List of students represented as tuples:
+# (name, country, age)
+##########################################################################
+students = [
+    ('ahmed', 'egypt', 35),
+    ('zakarya', 'yemen', 25),
+    ('mona', 'syria', 19),
+    ('mohamed', 'tunise', 21)
+]
+
+##########################################################################
+# List of names that will be sorted according to the number of times
+# the letter 'a' appears in each string.
+##########################################################################
+s = [
+    'ahmed',
+    'monaaaaaaaa',
+    'ali',
+    'mostafa',
+    'abdelrahman'
+]
+
+##########################################################################
+# Sort students by age (index 2 of each tuple).
+#
+# itemgetter(2) extracts the age from each tuple and uses it as
+# the sorting key.
+#
+# Example:
+# itemgetter(1, 2)
+#   - Sort first by index 1 (country).
+#   - If two countries are the same, sort by index 2 (age).
+##########################################################################
+sorted_students = sorted(students, key=itemgetter(2))
+
+##########################################################################
+# Sort strings by the number of occurrences of the letter 'a'.
+#
+# methodcaller('count', 'a') creates a function equivalent to:
+# lambda x: x.count('a')
+#
+# Strings with fewer 'a' characters appear first.
+##########################################################################
+sorted_names = sorted(s, key=methodcaller('count', 'a'))
+
+##########################################################################
+# Display the sorted results.
+##########################################################################
+print("Students sorted by age:")
+print(sorted_students)
+
+print("\nNames sorted by the number of 'a' characters:")
+print(sorted_names)
 
 
 
