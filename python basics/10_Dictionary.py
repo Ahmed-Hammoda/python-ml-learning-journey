@@ -74,7 +74,10 @@ print(allnames)
 print(allgrades)
 print(allitems)
 
-
+#we can assign more than one value for the same key but all values should follow the same type and number
+grades = {'ahmed' : ('46','23','palestine'),'george' : ('36','20','egypt')} 
+print(grades['ahmed']) #to get the data about ahmed
+print(grades['ahmed'][1]) #to get only ahmed age
 
 
 
