@@ -10,42 +10,42 @@ newdictionary = {'USA':'001', 'UK':'0044', 'Egypt':'002', 'KSA':'00699', 'UAE':'
 # Note: If the first element was a string, all keys should follow the same type (for consistency)
 
 # Define dictionaries of degrees (name -> value)
-degrees = {'ahmed': 21, 'aymen': 35, 'sami': 55, 'youssef': 15, 'mona': 50}
-degrees2 = {'ahmed': 21, 'aymen': 35, 'sami': 55, 'youssef': 15, 'mona': 50}
+grades = {'ahmed': 78, 'aymen': 62, 'sami': 55, 'youssef': 89, 'mona': 82}
+grades2 = {'ali': 71, 'sara': 45, 'yassine': 66, 'hamada': 38, 'mariam': 92}
 
 # Dictionary comprehension: create a dictionary where key = n and value = n squared
 a = {n: n**2 for n in range(6)}
 print(a)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
-print(degrees)
+print(grades)
 
 # Edit or add a key-value pair
-degrees['ahmed'] = 50  # Updates value of 'ahmed' to 50
-print(degrees)
+grades['ahmed'] = 50  # Updates value of 'ahmed' to 50
+print(grades)
 
 # Check if a key exists in the dictionary
-print('ahmed' in degrees)  # True
+print('ahmed' in grades)  # True
 
 # Get the value associated with a key
-print(degrees.get('ahmed'))  # 50
+print(grades.get('ahmed'))  # 50
 
 # Using get with default value: returns 40 if key does not exist
-print(degrees.get('nonexistent_key', 40))  # 40
+print(grades.get('nonexistent_key', 40))  # 40
 
 # Delete a key-value pair
-del(degrees['ahmed'])
-print(degrees)
+del(grades['ahmed'])
+print(grades)
 
 # Remove all elements from the dictionary
-degrees.clear()
-print(degrees)  # Output: {}
+grades.clear()
+print(grades)  # Output: {}
 
 # Delete the dictionary variable completely
-del(degrees)
-# print(degrees)  # Would give an error: 'degrees' is no longer defined
+del(grades)
+# print(grades)  # Would give an error: 'degrees' is no longer defined
 
 # Copy a dictionary to a new variable
-newdegrees = degrees2.copy()  
+newdegrees = grades2.copy()  
 # Changes to newdegrees will not affect the original degrees2 dictionary
 # Create a set of keys
 set1 = {'a', 'b', 'c', 'd'}
@@ -63,7 +63,16 @@ dec['d'] = 59
 # Print the updated dictionary with values
 print(dec)  # Output: {'a': 80, 'b': 52, 'c': 12, 'd': 59}
 
+# Get all the keys (names) from the dictionary and convert to a list
+allnames = list(grades2.keys())
+# Get all the values (grades) from the dictionary and convert to a list
+allgrades = list(grades2.values())
+# Get all the keys and values
+allitems = list(grades2.items())
 
+print(allnames)
+print(allgrades)
+print(allitems)
 
 
 
