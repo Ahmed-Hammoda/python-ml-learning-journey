@@ -97,11 +97,23 @@ print(v)
 
 print('-----------------')
 
+m = [(i,j) for i in range(2) for j in range(3)]
+print(m)
 
+print('-----------------')
 
+for x in range(20):
+    print('more')
+else:
+    print('less')
+    
+print('-----------------')
 
+print(sum([1.0/k for k in range(1,11)]))
 
+print('-----------------')
 
+print([r**2 for r in [10*i for i in range(10)]])
 
 
 
